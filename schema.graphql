@@ -1,13 +1,6 @@
-type DotContribution @entity {
+type ContributionSummary @entity {
   id: ID!
-
-  blockHeight: Int! @index
-  paraId: Int! @index
+  paraId: String!
   account: String!
   amount: String!
-  referralCode: String
-  timestamp: Date!
-  transactionExecuted: Boolean!
-  isValid: Boolean!
-  executedBlockHeight: Int @index
 }
