@@ -8,13 +8,12 @@ const MULTISIG_ADDR = [
 
 // const MULTISIG_ADDR = ["14auZo7SiRJUjnWoQdQJkQEFdy6KRF7xnyWRj91mxhPZKN4F"];
 
-const firstOrNull = (arr: any[]) => (arr.length > 0 ? arr[1] : null);
-
 export const handleCrowdloanContribute = async ({ event, idx }: SubstrateEvent) => {
   const [who, fund, amount] = event.data.toArray();
 
-  let record = firstOrNull(await ContributionSummary.getByParaId(fund.toString()));
-  if (record && record.account === who.toString()) {
+  let records = await ContributionSummary.getByParaId(fund.toString());
+  let record = records.find((r) => r.account === who.toString());
+  if (record) {
     record.amount = (BigInt(record.amount) + BigInt(amount.toString())).toString();
   } else {
     record = ContributionSummary.create({
