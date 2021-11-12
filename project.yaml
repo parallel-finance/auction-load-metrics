@@ -10,7 +10,7 @@ dataSources:
   - name: app
     kind: substrate/Runtime
     # startBlock: 7559000
-    startBlock: 70000
+    startBlock: 107200
     mapping:
       handlers:
         - handler: handleCrowdloanContribute
