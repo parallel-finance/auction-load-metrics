@@ -1,6 +1,6 @@
 type ContributionSummary @entity {
   id: ID!
-  paraId: String!
+  paraId: String! @index
   account: String!
   amount: String!
 }

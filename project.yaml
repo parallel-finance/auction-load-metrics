@@ -9,7 +9,7 @@ network:
 dataSources:
   - name: app
     kind: substrate/Runtime
-    startBlock: 80000
+    startBlock: 70000
     # startBlock: 162370
     mapping:
       handlers:
