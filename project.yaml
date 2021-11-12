@@ -3,13 +3,12 @@ description: The project for getting the on chain data of Kusama
 repository: "https://github.com/parallel-finance/auction-loan-subquery"
 schema: ./schema.graphql
 network:
-  endpoint: wss://wss.polkatrain.moonbeam.network
-  # endpoint: wss://rpc.polkadot.io
-  # dictionary: "https://api.subquery.network/sq/subquery/dictionary-kusama"
+  endpoint: wss://rpc.polkadot.io
+  dictionary: "https://api.subquery.network/sq/subquery/dictionary-polkadot"
 dataSources:
   - name: app
     kind: substrate/Runtime
-    startBlock: 70000
+    startBlock: 7559000
     # startBlock: 162370
     mapping:
       handlers:
